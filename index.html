@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<style>
+
+.container{
+    border-collapse:collapse;
+    text-align: center;
+    margin: 30px;
+    padding: 200px;
+    
+}
+.back{
+    background-color: green;
+}
+.data{
+    background-color: lightgreen;
+}
+.names{
+    width: 100;
+ }
+</style>
+
+
+</head>
+<body>
+    <div class="m-3">
+         <h1>Student Info</h1>
+         
+             
+         </div>
+         <button class="btn btn-primary col-2 ml-3" onclick="studentsdatadisplay()">Get Student Details</button>
+         <div id="getthedata" class="col-12">
+          
+
+         </div>
+         
+
+         <script>
+          let studentsDetails=[
+{
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+}
+,
+{
+  "id": 2,
+  "name": "Ervin Howell",
+  "username": "Antonette",
+  "email": "Shanna@melissa.tv",
+ 
+},
+{
+    "id": 4,
+    "name": "Patricia Lebsack",
+    "username": "Karianne",
+    "email": "Julianne.OConner@kory.org",
+    
+  },
+  {
+    "id": 5,
+    "name": "Chelsey Dietrich",
+    "username": "Kamren",
+    "email": "Lucio_Hettinger@annie.ca",
+   
+  },
+  {
+    "id": 6,
+    "name": "Mrs. Dennis Schulist",
+    "username": "Leopoldo_Corkery",
+    "email": "Karley_Dach@jasper.info",
+    
+  },
+  {
+    "id": 7,
+    "name": "Kurtis Weissnat",
+    "username": "Elwyn.Skiles",
+    "email": "Telly.Hoeger@billy.biz",
+   
+   
+  },
+  {
+    "id": 8,
+    "name": "Nicholas Runolfsdottir V",
+    "username": "Maxime_Nienow",
+    "email": "Sherwood@rosamond.me",
+},
+  {
+    "id": 9,
+    "name": "Glenna Reichert",
+    "username": "Delphine",
+    "email": "Chaim_McDermott@dana.io",
+    
+   
+  },
+  {
+    "id": 10,
+    "name": "Clementina DuBuque",
+   
+    "email": "Rey.Padberg@karina.biz",
+    
+   
+    }
+  
+]
+    
+    
+
+
+
+for(let i=0 ;i<studentsDetails.length;i++){
+    console.log(i)
+}
+console.log(studentsDetails.length)
+
+let container=document.getElementById("getthedata");
+function studentsdatadisplay(){
+
+    let tableElement=document.createElement("table");
+    tableElement.border="3";
+    tableElement.classList.add("container", "coll-12");
+    tableElement.cellPadding="20";
+    container.appendChild(tableElement)
+
+
+    let theadElement=document.createElement("thead");
+    tableElement.appendChild(theadElement);
+
+    let trElement=document.createElement("tr");
+    trElement.classList.add("back");
+    theadElement.appendChild(trElement);
+
+    let thElement1=document.createElement("th");
+    thElement1.classList.add("names")
+  
+    thElement1.textContent="id";
+    
+    trElement.appendChild(thElement1);
+
+    let thElement2=document.createElement("th");
+    thElement2.classList.add("names")
+    thElement2.textContent="names";
+    
+    trElement.appendChild(thElement2);
+
+    let thElement3=document.createElement("th");
+    thElement3.classList.add("names")
+    thElement3.textContent="Email id";
+    
+    trElement.appendChild(thElement3);
+    
+    
+    let tbodyElement=document.createElement("tbody");
+    tableElement.classList.add("data");
+
+    tableElement.appendChild(tbodyElement);
+     for(let i=0 ;i<studentsDetails.length;i++){
+        let trElement1=document.createElement("tr");
+        tbodyElement.appendChild(trElement1);
+        
+        let tdElement1=document.createElement("td");
+        tdElement1.textContent=studentsDetails[i].id;
+        trElement1.appendChild(tdElement1);
+     
+     
+        let tdElement2=document.createElement("td");
+        tdElement2.textContent=studentsDetails[i].name;
+        trElement1.appendChild(tdElement2);
+        
+        let tdElement3=document.createElement("td");
+        tdElement3.textContent=studentsDetails[i].email;
+        trElement1.appendChild(tdElement3);
+    
+    
+    
+     }
+}
+           </script>
+  </body>
+</html>
+
